@@ -218,7 +218,7 @@ DiagrammeR::grViz("digraph {
  
    iter [label = 'INEGI 2020',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  
-sinave_inegi [label = 'Sinave',  fillcolor =  '#DB4437'', color = 'white', fontcolor = 'white']
+sinave_inegi [label = 'SINAVE-INEGI',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
 
 
 }")
