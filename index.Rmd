@@ -165,6 +165,46 @@ sens [label = 'Análisis de Sensibilidad & Especificidad',  fillcolor =  '#8BC3F
 ---
 ## Casos vs variables Climáticas & Demográficas
 
+.pull-left[
+
+```{r, echo=FALSE}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, style = filled, color = grey] 
+   
+  ##### datasets
+ 
+  sinave [label = 'Sinave',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+
+  worldclim [label = 'WorldClim',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+ 
+   iter [label = 'INEGI 2020',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ 
+ 
+ 
+  #### Analysis
+  
+  corrmat [label = 'Correlation Matrix',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
+  
+  det [label = 'Determinante',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
+  
+  bar [label = 'Bartlett Test',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
+  
+    kmo [label = 'KMO Test',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
+    
+    
+  
+{sinave worldclim iter} ->  {corrmat det, bar kmo} 
+
+  
+}")
+```
+
+]
+.pull-right[
 ```{r, echo=FALSE}
 DiagrammeR::grViz("digraph {
                   # graph definitions
@@ -217,9 +257,10 @@ dalenius -> loc2
 sens [label = 'Análisis de Sensibilidad & Especificidad',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
 {loc1 loc2} -> sens
 
-}", width = 750)
+}")
 ```
 
+]
 
 ---
 
