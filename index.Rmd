@@ -137,9 +137,25 @@ DiagrammeR::grViz("digraph {
   
   iter -> tema  -> dataset
   
-  dataset -> {pca clust}
   
-}")
+  
+  indice [label = 'Indice',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+    dalenius [label = 'Dalenius & Hodge',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
+    
+    loc1 [label = 'Localidades de Riesgo 1',  fillcolor =  '#3C327B', color = 'white', fontcolor = 'white']
+    
+    loc2 [label = 'Localidades de Riesgo 2',  fillcolor =  '#3C327B', color = 'white', fontcolor = 'white']
+    
+  dataset -> pca -> indice -> {dalenius, clust} 
+  
+  clust -> loc1
+dalenius -> loc2
+
+sens [label = 'Análisis de Sensibilidad & Especificidad',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
+{loc1 loc2} -> sens
+
+}", width = 750)
 ```
 
 
