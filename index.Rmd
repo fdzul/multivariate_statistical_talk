@@ -53,7 +53,9 @@ xaringanExtra::use_share_again()
 
 
 ---
+class: center, middle
 ## Modelo de Estratificación del Dengue en México
+.pull-left[
 
 ```{r, echo=FALSE}
 DiagrammeR::grViz("digraph {
@@ -97,8 +99,68 @@ dalenius -> loc2
 sens [label = 'Análisis de Sensibilidad & Especificidad',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
 {loc1 loc2} -> sens
   
-}", width = 750)
+}")
 ```
+
+]
+.pull-right[
+```{r, echo=FALSE}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, style = filled, color = grey] 
+   
+  ##### dengue
+  dataset [label = 'Base de Datos',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
+  
+  sinave [label = 'Sinave',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+  cases_a [label = '2008-2015',  fillcolor =  '#4285F4', color = 'white', fontcolor = 'white']
+  cases_b [label = '2016-2021',  fillcolor = '#4285F4', color = 'white', fontcolor = 'white']
+  
+  sinave -> {cases_a[arrowhead = 'crow', arrowtail = 'box', color = 'white'] cases_b} -> dataset
+  
+  ##### worldclim
+  worldclim [label = 'WorldClim',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  bios [label = 'Bio1-Bio19',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  worldclim -> bios -> dataset
+  
+  ##### Iter 2020
+   iter [label = 'ITER 2020',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  tema [label = 'Tema',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+  #### Analysis
+  
+  pca [label = 'PCA',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+  clust [label = 'Cluster Analysis',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+  iter -> tema  -> dataset
+  
+  
+  
+  indice [label = 'Indice',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+    dalenius [label = 'Dalenius & Hodge',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
+    
+    loc1 [label = 'Localidades de Riesgo 1',  fillcolor =  '#3C327B', color = 'white', fontcolor = 'white']
+    
+    loc2 [label = 'Localidades de Riesgo 2',  fillcolor =  '#3C327B', color = 'white', fontcolor = 'white']
+    
+  dataset -> pca -> indice -> {dalenius, clust} 
+  
+  clust -> loc1
+dalenius -> loc2
+
+sens [label = 'Análisis de Sensibilidad & Especificidad',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
+{loc1 loc2} -> sens
+
+}")
+```
+
+]
+
 
 ---
 ## Casos vs variables Climáticas & Demográficas
