@@ -39,8 +39,25 @@ xaringanExtra::use_share_again()
 
 ## Modelo de Estratificación del Dengue en México
 
-```{r}
-
+```{r, echo=FALSE}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = square, style = filled, color = grey,
+  fixedsize = true, width = .5] 
+  
+  ###########
+  sinave [label = 'Sinave',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'black']
+  cases [label = 'Casos',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'black']
+  cases_a [label = '2008-2015',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'black']
+  cases_b [label = '2016-2021',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'black']
+  
+  sinave -> cases -> {cases_a, cases_b}
+  
+}",
+                  height = 300)
 ```
 
 

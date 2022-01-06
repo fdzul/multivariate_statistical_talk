@@ -17,6 +17,10 @@
     <script src="libs/shareon-1.4.1/shareon.min.js"></script>
     <link href="libs/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+    <script src="libs/viz-1.8.2/viz.js"></script>
+    <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+    <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
     <link rel="stylesheet" href="libs/cc-fonts.css" type="text/css" />
     <link rel="stylesheet" href="libs/figure-captions.css" type="text/css" />
   </head>
@@ -61,7 +65,15 @@ class: center, middle, inverse, title-slide
 
 
 
-## Modelo Estratificación del Dengue en México
+## Modelo de Estratificación del Dengue en México
+
+<div id="htmlwidget-9ebcd64e4b4a0e99d417" style="width:504px;height:300px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9ebcd64e4b4a0e99d417">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = square, style = filled, color = grey,\n  fixedsize = true, width = .5] \n  \n  ###########\n  sinave [label = \"Sinave\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"black\"]\n  cases [label = \"Casos\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"black\"]\n  cases_a [label = \"2008-2015\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"black\"]\n  cases_b [label = \"2016-2021\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"black\"]\n  \n  sinave -> cases -> {cases_a, cases_b}\n  \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+
+
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
