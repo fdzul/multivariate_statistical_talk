@@ -70,42 +70,38 @@ DiagrammeR::grViz("digraph {
 
   worldclim [label = 'WorldClim',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
  
-   iter [label = 'INEGI 2020',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+   iter [label = 'INEGI 2020',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  
  
  
   
   #### Analysis
   
-  pca [label = 'PCA',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  pca [label = 'PCA',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
   
-  clust [label = 'Cluster Analysis',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
-  
-  clust [label = 'Cluster Analysis',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  clust [label = 'Cluster Analysis',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
   
   indice [label = 'Indice',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
   
-    dalenius [label = 'Dalenius & Hodge',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+    dalenius [label = 'Dalenius & Hodge',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
     
-    loc1 [label = 'Localidades de Riesgo 1',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+    loc1 [label = 'Localidades de Riesgo 1',  fillcolor =  '#3C327B', color = 'white', fontcolor = 'white']
     
-    loc2 [label = 'Localidades de Riesgo 2',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+    loc2 [label = 'Localidades de Riesgo 2',  fillcolor =  '#3C327B', color = 'white', fontcolor = 'white']
   
 {sinave worldclim iter} -> pca -> dataset -> indice -> {clust, dalenius} 
 
 clust -> loc1
 dalenius -> loc2
 
-sens [label = 'Confusion Matrix',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+sens [label = 'Análisis de Sensibilidad & Especificidad',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
 {loc1 loc2} -> sens
   
-}")
+}", width = 750)
 ```
 
-
-
 ---
-## Relación entre casos y variables Climáticas & Demográficas
+## Casos vs variables Climáticas & Demográficas
 
 ```{r, echo=FALSE}
 DiagrammeR::grViz("digraph {
