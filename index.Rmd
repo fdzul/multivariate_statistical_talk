@@ -163,9 +163,11 @@ sens [label = 'Análisis de Sensibilidad & Especificidad',  fillcolor =  '#8BC3F
 
 
 ---
+class: center, middle
 ## Casos vs variables Climáticas & Demográficas
 
-.pull-left[
+
+### Análisis Exploratorio de las bases de Datos
 
 ```{r, echo=FALSE}
 DiagrammeR::grViz("digraph {
@@ -197,11 +199,12 @@ DiagrammeR::grViz("digraph {
     
   {sinave worldclim iter} ->  {corrmat det, bar kmo} 
   
-}")
+}", height = 100)
 ```
 
-]
-.pull-right[
+
+### Análisis de las bases de datos
+
 ```{r, echo=FALSE}
 DiagrammeR::grViz("digraph {
                   # graph definitions
@@ -219,12 +222,34 @@ DiagrammeR::grViz("digraph {
    iter [label = 'INEGI 2020',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  
 sinave_inegi [label = 'SINAVE-INEGI',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
+sinave_bio [label = 'SINAVE-WorlClim',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
 
+##### analysis
+ pls1 [label = 'Projection to Latent Structure',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
+  pls2 [label = 'Projection to Latent Structure',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'black']
 
-}")
+##
+{sinave iter} -> sinave_inegi
+{sinave worldclim} -> sinave_bio
+
+sinave_inegi -> pls1
+sinave_bio -> pls2
+###
+ var_exp_bio[label = 'var exp bio',  fillcolor =  '#3C327B', color = 'white', fontcolor = 'white']
+    
+var_bio [label = 'var bio imp',  fillcolor =  '#3C327B', color = 'white', fontcolor = 'white']
+
+pls2 ->{var_exp_bio, var_bio}
+
+###
+ var_exp_iter[label = 'var exp inegi',  fillcolor =  '#3C327B', color = 'white', fontcolor = 'white']
+    
+var_iter [label = 'var inegi imp',  fillcolor =  '#3C327B', color = 'white', fontcolor = 'white']
+
+pls1 ->{var_exp_iter, var_iter}
+
+}", height = 300)
 ```
-
-]
 
 ---
 
