@@ -227,50 +227,6 @@ sens [label = 'Análisis de Sensibilidad & Especificidad',  fillcolor =  '#8BC3F
 ## Modelo de Estratificación del Dengue en México
 
 
-```{r, echo=FALSE}
-DiagrammeR::grViz("digraph {
-                  # graph definitions
-  graph [layout = dot, rankdir = TB]
-  
-  # node definitions
-  node [shape = rectangle, style = filled, color = grey] 
-   
-  ##### dengue
-  dataset [label = 'Base de Datos',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
- 
-  
-  ##### Iter 2020
-   iter [label = 'Iter 2020',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-  tema [label = 'Tema',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-  pob [label = 'Población',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-  len_ind [label = 'Lengua Indigena',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-  
-  viv [label = 'Vivienda',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-  
-  fec [label = 'Fecundidad',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-  
-  mig [label = 'Migración',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-  
-   disc [label = 'Discapacidad',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-   
-    ser_sal [label = 'Servicios de Salud',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-    
-    edo_cony [label = 'Estado Conyugal',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-    
-    relig [label = 'Religión',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-    hog_censales [label = 'Hogares Censales',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-    
-    educ [label = 'Educación',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-    
-    car_econom [label = 'Características Ecónomicas',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
-    
-    
-  
-  iter ->tema -> {pob len_ind viv fec mig disc ser_sal edo_cony relig hog_censales educ car_econom} -> dataset
-  
-}",width = 800)
-```
-
 
 ---
 
@@ -282,9 +238,9 @@ DiagrammeR::grViz("digraph {
 
 - ***celular***     :     228 229 3419
 
-- ***slides***:     https://jolly-edison-c35bbb.netlify.app/
+- ***slides***      :     https://dreamy-colden-358d2a.netlify.app
 
-- ***próximo curso***: ***Análisis espacial del dengue en [R](https://cran.r-project.org/) y [Python](https://www.python.org/)***
+
 
 
 
