@@ -1,5 +1,5 @@
 ---
-title: "Estratificación del dengue usando estadística multivariada"
+title: "Estratificación del Dengue usando Estadística Multivariada"
 author: "Felipe Antonio Dzul Manzanilla"
 institute: "Especialidad en Métodos Estadísticos"
 date: "2022/12/06 (updated: `r Sys.Date()`)"
@@ -45,16 +45,17 @@ DiagrammeR::grViz("digraph {
   graph [layout = dot, rankdir = TB]
   
   # node definitions
-  node [shape = square, style = filled, color = grey,
-  fixedsize = true, width = .5] 
-  
+  node [shape = square, style = filled, color = grey] 
+   
   ###########
+  dataset [label = 'Base de Datos',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'black']
+  
   sinave [label = 'Sinave',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'black']
   cases [label = 'Casos',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'black']
   cases_a [label = '2008-2015',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'black']
   cases_b [label = '2016-2021',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'black']
   
-  sinave -> cases -> {cases_a, cases_b}
+  sinave -> cases -> {cases_a[arrowhead = 'crow', arrowtail = box, color = 'Maroon'] cases_b} -> dataset
   
 }",
                   height = 300)
