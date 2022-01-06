@@ -35,8 +35,24 @@ xaringanExtra::use_tachyons()
 ```{r share-again, echo=FALSE}
 xaringanExtra::use_share_again()
 ```
+## Objetivo General
+&nbsp;
+### Desarollar un modelo de Estratificación del Dengue 
+&nbsp;
+&nbsp;
+## Objetivo Específico 
+
+&nbsp;
+### Identificar las localidades de mayor riesgo usando estadística multivariada
+&nbsp;
+
+### Comparar el analysis de cluster y la metodología de Dalenius-Hodge en la identificación de las localidades de alto riesgo.
+
+&nbsp;
+### Identificar los factores que se relacionan con las localidades de mayor riesgo usando estadística multivariada
 
 
+---
 ## Modelo de Estratificación del Dengue en México
 
 ```{r, echo=FALSE}
@@ -47,25 +63,161 @@ DiagrammeR::grViz("digraph {
   # node definitions
   node [shape = rectangle, style = filled, color = grey] 
    
-  # dengue
-  dataset [label = 'Base de Datos',  fillcolor =  'Orange', color = 'white', fontcolor = 'black']
+  ##### dengue
+  dataset [label = 'Base de Datos',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
   
   sinave [label = 'Sinave',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
-  cases [label = 'Casos',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
-  cases_a [label = '2008-2015',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
-  cases_b [label = '2016-2021',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+
+  worldclim [label = 'WorldClim',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+ 
+   iter [label = 'INEGI 2020',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+ 
+ 
+ 
   
-  sinave -> cases -> {cases_a[arrowhead = 'crow', arrowtail = 'box', color = 'white'] cases_b} -> dataset
+  #### Analysis
   
-  # worldclim
-  worldclim [label = 'WorldClim',  fillcolor =  'SeaGreen', color = 'white', fontcolor = 'white']
-  bios [label = 'Bio1-Bio19',  fillcolor =  'SeaGreen', color = 'white', fontcolor = 'white']
-  worldclim -> bios -> dataset
+  pca [label = 'PCA',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
   
-}",
-                  height = 300)
+  clust [label = 'Cluster Analysis',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+  clust [label = 'Cluster Analysis',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+  indice [label = 'Indice',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+    dalenius [label = 'Dalenius & Hodge',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+    
+    loc1 [label = 'Localidades de Riesgo 1',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+    
+    loc2 [label = 'Localidades de Riesgo 2',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+{sinave worldclim iter} -> pca -> dataset -> indice -> {clust, dalenius} 
+
+clust -> loc1
+dalenius -> loc2
+
+sens [label = 'Confusion Matrix',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+{loc1 loc2} -> sens
+  
+}")
 ```
 
+
+
+---
+## Relación entre casos y variables Climáticas & Demográficas
+
+```{r, echo=FALSE}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, style = filled, color = grey] 
+   
+  ##### dengue
+  dataset [label = 'Base de Datos',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
+  
+  sinave [label = 'Sinave',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+  cases_a [label = '2008-2015',  fillcolor =  '#4285F4', color = 'white', fontcolor = 'white']
+  cases_b [label = '2016-2021',  fillcolor = '#4285F4', color = 'white', fontcolor = 'white']
+  
+  sinave -> {cases_a[arrowhead = 'crow', arrowtail = 'box', color = 'white'] cases_b} -> dataset
+  
+  ##### worldclim
+  worldclim [label = 'WorldClim',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  bios [label = 'Bio1-Bio19',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  worldclim -> bios -> dataset
+  
+  ##### Iter 2020
+   iter [label = 'ITER 2020',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  tema [label = 'Tema',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+  #### Analysis
+  
+  pca [label = 'PCA',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+  clust [label = 'Cluster Analysis',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+  
+  iter -> tema  -> dataset
+  
+  dataset -> {pca clust}
+  
+}")
+```
+
+
+---
+
+
+## Modelo de Estratificación del Dengue en México
+
+
+```{r, echo=FALSE}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, style = filled, color = grey] 
+   
+  ##### dengue
+  dataset [label = 'Base de Datos',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
+ 
+  
+  ##### Iter 2020
+   iter [label = 'Iter 2020',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+  tema [label = 'Tema',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+  pob [label = 'Población',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+  len_ind [label = 'Lengua Indigena',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+  
+  viv [label = 'Vivienda',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+  
+  fec [label = 'Fecundidad',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+  
+  mig [label = 'Migración',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+  
+   disc [label = 'Discapacidad',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+   
+    ser_sal [label = 'Servicios de Salud',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+    
+    edo_cony [label = 'Estado Conyugal',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+    
+    relig [label = 'Religión',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+    hog_censales [label = 'Hogares Censales',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+    
+    educ [label = 'Educación',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+    
+    car_econom [label = 'Características Ecónomicas',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'white']
+    
+    
+  
+  iter ->tema -> {pob len_ind viv fec mig disc ser_sal edo_cony relig hog_censales educ car_econom} -> dataset
+  
+}",width = 800)
+```
+
+
+---
+
+# Thanks!
+
+&nbsp;
+
+- ***email***       :     felipe.dzul.m@gmail.com
+
+- ***celular***     :     228 229 3419
+
+- ***slides***:     https://jolly-edison-c35bbb.netlify.app/
+
+- ***próximo curso***: ***Análisis espacial del dengue en [R](https://cran.r-project.org/) y [Python](https://www.python.org/)***
+
+
+
+.footnote[La presentación fue creada via [**xaringan**](https://github.com/yihui/xaringan),
+[**revealjs**](https://revealjs.com/),
+[remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr),
+& [R Markdown](https://rmarkdown.rstudio.com) en [R]() & [RStudio](2.R_Scripts/libs/rstudio_leaflet/rstudio_leaflet.css).]
 
 
 
