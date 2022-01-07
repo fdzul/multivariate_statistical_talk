@@ -385,7 +385,7 @@ ___
 ## PLS Dengue (Y)- WorlClim (X) & INEGI (X)
 ___
 
-.pull-left[.blue[Porcentaje de Varianza Explicada]
+.pull-left[.blue[### Porcentaje de Varianza Explicada]
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
 tibble::tibble(componente = c(1:5),
                X = c(0.818720328, 0.040002131, 0.029286369, 0.004300647, 0.029486906),
@@ -394,18 +394,25 @@ tibble::tibble(componente = c(1:5),
 ```
 ]
 
-.pull-right[.blue[Variables Importantes]
+.pull-right[.blue[### Variables Importantes]
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
 tibble::tibble(var = c("pro_crieva",  "pcdisc_mot", "vph_1cuart",
-                       "pnacoe", "pcdisc_mot2",   "pcon_disc",  "p15pri_cof"),
+                       "pnacoe", "pcdisc_mot2",   "pcon_disc",
+                       "p15pri_cof"),
                Stabilidad = c(.9, .98, .88, .82, .8, .76, .78)) |>
     kableExtra::kable()
 ```
 ]
 
-
-
-
+.tiny[.blue[.footnote[
+pro_crieva = Población con grupo religioso protestante/cristiano evangélico,
+pcdisc_mot = Población con discapacidad para caminar, subir o bajar,
+vph_1cuart = Piviendas particulares habitadas con sólo un cuarto,
+pnacoe = Personas nacidas en otra entidad federativa,
+pcdisc_mot2 = Población con discapacidad para vestirse, bañarse o comer,
+pcon_disc = Población con discapacidad,
+p15pri_cof = Población femenina de 15 años y más con primaria completa
+]]]
 ---
 # Thanks!
 ___
