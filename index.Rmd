@@ -259,13 +259,13 @@ class: center, middle
 ]
 .pull-right[
 .blue[Correlation Matrix: INEGI]
-![](figs/corrmat_dengue.png)
+![](figs/corrmat_inegi.png)
 ]
 
 ---
 ## Resultado de los análisis exploratorios
 
-![](figs/corrmat_dengue.png)
+
 ---
 
 # Thanks!
