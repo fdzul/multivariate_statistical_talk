@@ -382,7 +382,7 @@ ___
 ]
 
 ---
-## PLS Dengue (Y)- WorlClim (X) & INEGI (X)
+## PLS Dengue (Y) - WorlClim (X) & INEGI (X)
 ___
 
 .pull-left[.blue[### Porcentaje de Varianza Explicada]
