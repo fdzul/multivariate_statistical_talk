@@ -300,7 +300,52 @@ ___
 <img src="figs/corrmat_den&bio.jpeg" width="550">
 
 ---
+class: center
+### Indicadores de la matriz de correlaciones
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+load("C:/Users/felip/OneDrive/multivariate_analysis_eme/8.RData/5.multivariate_analysis/n_integration_data.RData")
+den <- X$cases
+bio <- X$bio
+inegi <- X$inegi
 
+
+######
+bio_prec <- bio |>
+    dplyr::select(dplyr::starts_with(c("prec")))
+bio_tmin <- bio |>
+    dplyr::select(dplyr::starts_with(c("prec", "tmin")))
+bio_tmean <- bio |>
+    dplyr::select(dplyr::starts_with(c("prec","tmean")))
+bio_tmax <- bio |>
+    dplyr::select(dplyr::starts_with(c("prec", "tmax")))
+
+
+tibble::tibble(indicador = c("Determinante",
+                             "Bartlett P Value",
+                             "KMO Overall MSA"),
+               Dengue = c(det(cor(den)),
+                          psych::cortest.bartlett(cor(den), n = nrow(den))$p.value,
+                          psych::KMO(cor(den))[[1]]),
+               Bio_prec = c(det(cor(bio)),
+                               psych::cortest.bartlett(cor(bio_prec), n = nrow(bio_prec))$p.value,
+                               psych::KMO(cor(bio))[[1]]),
+               Bio_tmin = c(det(cor(bio_tmin)),
+                            psych::cortest.bartlett(cor(bio_tmin), n = nrow(bio_tmin))$p.value,
+                            psych::KMO(cor(bio_tmin))[[1]]),
+               Bio_tmean = c(det(cor(bio_tmean)),
+                            psych::cortest.bartlett(cor(bio_tmean), n = nrow(bio_tmean))$p.value,
+                            psych::KMO(cor(bio_tmean))[[1]]),
+               Bio_tmax = c(det(cor(bio_tmax)),
+                            psych::cortest.bartlett(cor(bio_tmax), n = nrow(bio_tmax))$p.value,
+                            psych::KMO(cor(bio_tmax))[[1]]),
+               Sociodemográficas = c(det(cor(inegi)),
+                                     psych::cortest.bartlett(cor(inegi), n = nrow(inegi))$p.value,
+                                     psych::KMO(cor(inegi))[[1]])) |>
+    kableExtra::kable()
+```
+
+
+---
 # Thanks!
 ___
 
