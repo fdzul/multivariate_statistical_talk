@@ -255,11 +255,11 @@ pls1 ->{var_exp_iter, var_iter}
 class: center, middle
 ## Resultado de los análisis exploratorios
 .pull-left[.blue[Correlation Matrix: Dengue]
-![](figs/corrmat_dengue.png)
+![](figs/corrmat_dengue.jpeg)
 ]
 .pull-right[
 .blue[Correlation Matrix: INEGI]
-![](figs/corrmat_inegi.png)
+![](figs/corrmat_bio_prec.jpeg)
 ]
 
 ---
