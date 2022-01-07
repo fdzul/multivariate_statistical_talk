@@ -289,10 +289,15 @@ ___
 
 ---
 class: center
-## Resultados: Matriz de Correlaciones
+### Matriz de Correlaciones: Dengue Vs INEGI
 ___
-
 <img src="figs/corrmat_den&inegi.jpeg" width="550">
+
+---
+class: center
+### Matriz de Correlaciones: Dengue Vs WorldClim
+___
+<img src="figs/corrmat_den&bio.jpeg" width="550">
 
 ---
 
