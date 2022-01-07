@@ -353,17 +353,17 @@ tibble::tibble(indicador = c("Determinante",
 ```
 ---
 ## Resultados: Matriz de Correlaciones
-___
-&nbsp;
-### Los resultados del análisis exploratorio gráfico, indican los siguientes problemas.
-&nbsp;
-&nbsp;
+.pull-left[.large[.justify-left[.blue[
 ### - colinealidad & multicolinealidad.
 &nbsp;
 ### - matrices singulares (determinante = 0). 
 &nbsp;
 ### - matrices esparzas (matrices con muchos ceros). 
+]]]]
 
+.pull-right[
+<img src = "https://images.routledge.com/common/jackets/amazon/978036746/9780367460945.jpg" width="450">
+]
 
 ---
 ## PLS Dengue (Y)- WorlClim (X) & INEGI (X)
