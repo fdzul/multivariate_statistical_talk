@@ -352,8 +352,8 @@ tibble::tibble(indicador = c("Determinante",
     kableExtra::kable()
 ```
 ---
-
 ## Resultados: Matriz de Correlaciones
+___
 &nbsp;
 ### Los resultados del análisis exploratorio gráfico, indican los siguientes problemas.
 &nbsp;
