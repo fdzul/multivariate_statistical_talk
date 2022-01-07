@@ -264,11 +264,11 @@ pls1 ->{var_exp_iter, var_iter}
 
 &nbsp;
 
-- ***email***       :     felipe.dzul.m@gmail.com
+- ***email***   :     felipe.dzul.m@gmail.com
 
-- ***celular***     :     228 229 3419
+- ***celular*** :     228 229 3419
 
-- ***slides***      :     https://fdzul.netlify.app/#1
+- ***slides***  :     https://fdzul.netlify.app/#1
 
 
 
