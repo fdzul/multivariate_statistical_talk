@@ -367,30 +367,43 @@ tibble::tibble(indicador = c("Determinante",
 ---
 ## PLS Dengue (Y)- WorlClim (X) & INEGI (X)
 ___
-.pull-left[.blue[sPLS
+.pull-left[.blue[ ### sPLS]
 
-- Paso 1. Selección de los componentes.
+### - Paso 1. Selección de los componentes.
 &nbsp;
-- Paso 2. Selección de las variables XY. 
+### - Paso 2. Selección de las variables XY. 
 &nbsp;
-- Paso 3. Modelo sPLS Final.
-
-![](figs/spls_den_inegi/n_comp_Q2_spls_den_inegi.jpg)
-]
-
+### - Paso 3. Modelo sPLS Final.
 ]
 
 .pull-right[
-.blue[]
-```{r, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
-load("C:/Users/felip/OneDrive/multivariate_analysis_eme/9.results/sPLS_den_inegi20_talk.RData")
-round(spls2_res$prop_expl_var$X, digits = 3)
+.blue[### Número de componentes]
+![](figs/spls_den_inegi/n_comp_Q2_spls_den_inegi.jpg)
+]
 
-# X
-round(spls2_res$prop_expl_var$Y, digits = 3)
-extract_stab_comp1X
+---
+## PLS Dengue (Y)- WorlClim (X) & INEGI (X)
+___
+
+.pull-left[.blue[Porcentaje de Varianza Explicada]
+```{r, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+tibble::tibble(componente = c(1:5),
+               X = c(0.818720328, 0.040002131, 0.029286369, 0.004300647, 0.029486906),
+               Y = c(0.61775237, 0.14462042, 0.07970032, 0.12232005, 0.05747390 )) |>
+    kableExtra::kable()
 ```
 ]
+
+.pull-right[.blue[Variables Importantes]
+```{r, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+tibble::tibble(var = c("pro_crieva",  "pcdisc_mot", "vph_1cuart",
+                       "pnacoe", "pcdisc_mot2",   "pcon_disc",  "p15pri_cof"),
+               Stabilidad = c(.9, .98, .88, .82, .8, .76, .78)) |>
+    kableExtra::kable()
+```
+]
+
+
 
 
 ---
