@@ -252,12 +252,22 @@ pls1 ->{var_exp_iter, var_iter}
 ```
 
 ---
+class: center, middle
+## Resultado de los análisis exploratorios
 
+```{r, echo=FALSE, dpi = 300}
+library(cowplot)
+library(ggplot2)
 
-## Modelo de Estratificación del Dengue en México
+p1 <- ggdraw() + draw_image("C:/Users/felip/OneDrive/multivariate_analysis_eme/4.Graph/slide/corrmat_dengue.jpeg", scale = 1)
+p2 <- ggdraw() + draw_image("C:/Users/felip/OneDrive/multivariate_analysis_eme/4.Graph/slide/corrmat_inegi.jpeg", scale = 1)
+cowplot::plot_grid(p1, p2)
+```
 
+---
+## Resultado de los análisis exploratorios
 
-
+![](C:/Users/felip/OneDrive/multivariate_analysis_eme/4.Graph/slide/corrmat_dengue.png)
 ---
 
 # Thanks!
