@@ -268,7 +268,7 @@ pls1 ->{var_exp_iter, var_iter}
 
 - ***celular***     :     228 229 3419
 
-- ***slides***      :     https://dreamy-colden-358d2a.netlify.app
+- ***slides***      :     https://fdzul.netlify.app/#1
 
 
 
