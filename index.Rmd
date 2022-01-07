@@ -55,6 +55,7 @@ xaringanExtra::use_share_again()
 ---
 class: center, middle
 ## Modelo de Estratificación del Dengue en México
+___
 .pull-left[
 
 ```{r, echo=FALSE}
@@ -165,10 +166,9 @@ sens [label = 'Análisis de Sensibilidad & Especificidad',  fillcolor =  '#8BC3F
 ---
 class: center, middle
 ## Casos vs variables Climáticas & Demográficas
-
+___
 
 ### Análisis Exploratorio de las bases de Datos
-
 ```{r, echo=FALSE}
 DiagrammeR::grViz("digraph {
                   # graph definitions
@@ -204,7 +204,6 @@ DiagrammeR::grViz("digraph {
 
 
 ### Análisis de las bases de datos
-
 ```{r, echo=FALSE}
 DiagrammeR::grViz("digraph {
                   # graph definitions
@@ -253,23 +252,52 @@ pls1 ->{var_exp_iter, var_iter}
 
 ---
 class: center
-## Resultado de los análisis exploratorios
-.pull-left[.blue[Correlation Matrix: Dengue]
+## Resultados: Matriz de Correlaciones
+___
+.pull-left[.blue[Dengue]
 ![](figs/corrmat_dengue.jpeg)]
 
 .pull-right[
-.blue[Correlation Matrix: Precipitación & Altitud]
+.blue[Precipitación & Altitud]
 ![](figs/corrmat_bio_prec.jpeg)]
 
 
 ---
 class: center
-## Resultado de los análisis exploratorios
+## Resultados: Matriz de Correlaciones
+___
 <img src="figs/corrmat_inegi.jpeg" width="550">
+
+
+---
+class: center
+## Resultados: Matriz de Correlaciones
+___
+.pull-left[.blue[Temperatura Media & Precipitación]
+![](figs/corrmat_bio_tmean.jpeg)]
+
+.pull-right[
+.blue[Temperatura Mínima & Precipitación]
+![](figs/corrmat_bio_tmin.jpeg)]
+
+---
+class: center
+## Resultados: Matriz de Correlaciones
+___
+
+<img src="figs/corrmat_bio_tmax.jpeg" width="550">
+
+---
+class: center
+## Resultados: Matriz de Correlaciones
+___
+
+<img src="figs/corrmat_den&inegi.jpeg" width="550">
 
 ---
 
 # Thanks!
+___
 
 &nbsp;
 
@@ -277,7 +305,7 @@ class: center
 
 - ***celular***    :     228 229 3419
 
-- ***slides***     :     https://fdzul.netlify.app/#1
+- ***slides***     :     https://fdzul.netlify.app/
 
 
 

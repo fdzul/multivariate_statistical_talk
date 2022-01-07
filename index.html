@@ -83,15 +83,16 @@ class: center, middle, inverse, title-slide
 ---
 class: center, middle
 ## Modelo de Estratificación del Dengue en México
+___
 .pull-left[
 
-<div id="htmlwidget-2144c670388f7a6f1afa" style="width:504px;height:504px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2144c670388f7a6f1afa">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n   \n  ##### dengue\n  dataset [label = \"Base de Datos\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\n  \n  sinave [label = \"Sinave\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  worldclim [label = \"WorldClim\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n   iter [label = \"INEGI 2020\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n \n  \n  #### Analysis\n  \n  pca [label = \"PCA\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  \n  clust [label = \"Cluster Analysis\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  \n  indice [label = \"Indice\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  \n    dalenius [label = \"Dalenius & Hodge\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n    \n    loc1 [label = \"Localidades de Riesgo 1\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n    \n    loc2 [label = \"Localidades de Riesgo 2\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n  \n{sinave worldclim iter} -> pca -> dataset -> indice -> {clust, dalenius} \n\nclust -> loc1\ndalenius -> loc2\n\nsens [label = \"Análisis de Sensibilidad & Especificidad\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n{loc1 loc2} -> sens\n  \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b2555d2a5efbfbf325a8" style="width:504px;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b2555d2a5efbfbf325a8">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n   \n  ##### dengue\n  dataset [label = \"Base de Datos\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\n  \n  sinave [label = \"Sinave\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  worldclim [label = \"WorldClim\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n   iter [label = \"INEGI 2020\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n \n  \n  #### Analysis\n  \n  pca [label = \"PCA\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  \n  clust [label = \"Cluster Analysis\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  \n  indice [label = \"Indice\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  \n    dalenius [label = \"Dalenius & Hodge\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n    \n    loc1 [label = \"Localidades de Riesgo 1\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n    \n    loc2 [label = \"Localidades de Riesgo 2\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n  \n{sinave worldclim iter} -> pca -> dataset -> indice -> {clust, dalenius} \n\nclust -> loc1\ndalenius -> loc2\n\nsens [label = \"Análisis de Sensibilidad & Especificidad\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n{loc1 loc2} -> sens\n  \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 ]
 .pull-right[
-<div id="htmlwidget-53bae1910761df525af6" style="width:504px;height:504px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-53bae1910761df525af6">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n   \n  ##### dengue\n  dataset [label = \"Base de Datos\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\n  \n  sinave [label = \"Sinave\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n  cases_a [label = \"2008-2015\",  fillcolor =  \"#4285F4\", color = \"white\", fontcolor = \"white\"]\n  cases_b [label = \"2016-2021\",  fillcolor = \"#4285F4\", color = \"white\", fontcolor = \"white\"]\n  \n  sinave -> {cases_a[arrowhead = \"crow\", arrowtail = \"box\", color = \"white\"] cases_b} -> dataset\n  \n  ##### worldclim\n  worldclim [label = \"WorldClim\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  bios [label = \"Bio1-Bio19\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  worldclim -> bios -> dataset\n  \n  ##### Iter 2020\n   iter [label = \"ITER 2020\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  tema [label = \"Tema\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  \n  #### Analysis\n  \n  pca [label = \"PCA\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  \n  clust [label = \"Cluster Analysis\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  \n  iter -> tema  -> dataset\n  \n  \n  \n  indice [label = \"Indice\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  \n    dalenius [label = \"Dalenius & Hodge\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n    \n    loc1 [label = \"Localidades de Riesgo 1\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n    \n    loc2 [label = \"Localidades de Riesgo 2\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n    \n  dataset -> pca -> indice -> {dalenius, clust} \n  \n  clust -> loc1\ndalenius -> loc2\n\nsens [label = \"Análisis de Sensibilidad & Especificidad\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n{loc1 loc2} -> sens\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ddfaf299e12b14c4163b" style="width:504px;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ddfaf299e12b14c4163b">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n   \n  ##### dengue\n  dataset [label = \"Base de Datos\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\n  \n  sinave [label = \"Sinave\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n  cases_a [label = \"2008-2015\",  fillcolor =  \"#4285F4\", color = \"white\", fontcolor = \"white\"]\n  cases_b [label = \"2016-2021\",  fillcolor = \"#4285F4\", color = \"white\", fontcolor = \"white\"]\n  \n  sinave -> {cases_a[arrowhead = \"crow\", arrowtail = \"box\", color = \"white\"] cases_b} -> dataset\n  \n  ##### worldclim\n  worldclim [label = \"WorldClim\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  bios [label = \"Bio1-Bio19\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  worldclim -> bios -> dataset\n  \n  ##### Iter 2020\n   iter [label = \"ITER 2020\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  tema [label = \"Tema\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  \n  #### Analysis\n  \n  pca [label = \"PCA\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  \n  clust [label = \"Cluster Analysis\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  \n  iter -> tema  -> dataset\n  \n  \n  \n  indice [label = \"Indice\",  fillcolor =  \"#F4B400\", color = \"white\", fontcolor = \"black\"]\n  \n    dalenius [label = \"Dalenius & Hodge\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n    \n    loc1 [label = \"Localidades de Riesgo 1\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n    \n    loc2 [label = \"Localidades de Riesgo 2\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n    \n  dataset -> pca -> indice -> {dalenius, clust} \n  \n  clust -> loc1\ndalenius -> loc2\n\nsens [label = \"Análisis de Sensibilidad & Especificidad\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n{loc1 loc2} -> sens\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 ]
 
@@ -99,38 +100,65 @@ class: center, middle
 ---
 class: center, middle
 ## Casos vs variables Climáticas &amp; Demográficas
-
+___
 
 ### Análisis Exploratorio de las bases de Datos
-
-<div id="htmlwidget-703e6a774522f4f8676d" style="width:504px;height:100px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-703e6a774522f4f8676d">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n   \n  ##### datasets\n \n  sinave [label = \"Sinave\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  worldclim [label = \"WorldClim\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n   iter [label = \"INEGI 2020\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n \n  #### Analysis\n  \n  corrmat [label = \"Correlation Matrix\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  \n  det [label = \"Determinante\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  \n  bar [label = \"Bartlett Test\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  \n  kmo [label = \"KMO Test\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n    \n  {sinave worldclim iter} ->  {corrmat det, bar kmo} \n  \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8aa139c38685e979a5f4" style="width:504px;height:100px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8aa139c38685e979a5f4">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n   \n  ##### datasets\n \n  sinave [label = \"Sinave\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  worldclim [label = \"WorldClim\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n   iter [label = \"INEGI 2020\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n \n  #### Analysis\n  \n  corrmat [label = \"Correlation Matrix\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  \n  det [label = \"Determinante\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  \n  bar [label = \"Bartlett Test\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  \n  kmo [label = \"KMO Test\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n    \n  {sinave worldclim iter} ->  {corrmat det, bar kmo} \n  \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 ### Análisis de las bases de datos
-
-<div id="htmlwidget-762a59903ad13e4966c7" style="width:504px;height:300px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-762a59903ad13e4966c7">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n   \n  ##### datasets\n \n  sinave [label = \"Sinave\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  worldclim [label = \"WorldClim\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n   iter [label = \"INEGI 2020\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \nsinave_inegi [label = \"SINAVE-INEGI\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\nsinave_bio [label = \"SINAVE-WorlClim\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\n\n##### analysis\n pls1 [label = \"Projection to Latent Structure\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  pls2 [label = \"Projection to Latent Structure\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n\n##\n{sinave iter} -> sinave_inegi\n{sinave worldclim} -> sinave_bio\n\nsinave_inegi -> pls1\nsinave_bio -> pls2\n###\n var_exp_bio[label = \"var exp bio\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n    \nvar_bio [label = \"var bio imp\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n\npls2 ->{var_exp_bio, var_bio}\n\n###\n var_exp_iter[label = \"var exp inegi\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n    \nvar_iter [label = \"var inegi imp\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n\npls1 ->{var_exp_iter, var_iter}\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4b26172d9fa30d2b260e" style="width:504px;height:300px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4b26172d9fa30d2b260e">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n   \n  ##### datasets\n \n  sinave [label = \"Sinave\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  worldclim [label = \"WorldClim\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n   iter [label = \"INEGI 2020\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \nsinave_inegi [label = \"SINAVE-INEGI\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\nsinave_bio [label = \"SINAVE-WorlClim\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\n\n##### analysis\n pls1 [label = \"Projection to Latent Structure\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n  pls2 [label = \"Projection to Latent Structure\",  fillcolor =  \"#8BC3FC\", color = \"white\", fontcolor = \"black\"]\n\n##\n{sinave iter} -> sinave_inegi\n{sinave worldclim} -> sinave_bio\n\nsinave_inegi -> pls1\nsinave_bio -> pls2\n###\n var_exp_bio[label = \"var exp bio\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n    \nvar_bio [label = \"var bio imp\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n\npls2 ->{var_exp_bio, var_bio}\n\n###\n var_exp_iter[label = \"var exp inegi\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n    \nvar_iter [label = \"var inegi imp\",  fillcolor =  \"#3C327B\", color = \"white\", fontcolor = \"white\"]\n\npls1 ->{var_exp_iter, var_iter}\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 ---
 class: center
-## Resultado de los análisis exploratorios
-.pull-left[.blue[Correlation Matrix: Dengue]
+## Resultados: Matriz de Correlaciones
+___
+.pull-left[.blue[Dengue]
 ![](figs/corrmat_dengue.jpeg)]
 
 .pull-right[
-.blue[Correlation Matrix: Precipitación &amp; Altitud]
+.blue[Precipitación &amp; Altitud]
 ![](figs/corrmat_bio_prec.jpeg)]
 
 
 ---
 class: center
-## Resultado de los análisis exploratorios
+## Resultados: Matriz de Correlaciones
+___
 &lt;img src="figs/corrmat_inegi.jpeg" width="550"&gt;
+
+
+---
+class: center
+## Resultados: Matriz de Correlaciones
+___
+.pull-left[.blue[Temperatura Media &amp; Precipitación]
+![](figs/corrmat_bio_tmean.jpeg)]
+
+.pull-right[
+.blue[Temperatura Mínima &amp; Precipitación]
+![](figs/corrmat_bio_tmin.jpeg)]
+
+---
+class: center
+## Resultados: Matriz de Correlaciones
+___
+
+&lt;img src="figs/corrmat_bio_tmax.jpeg" width="550"&gt;
+
+---
+class: center
+## Resultados: Matriz de Correlaciones
+___
+
+&lt;img src="figs/corrmat_den&amp;inegi.jpeg" width="550"&gt;
 
 ---
 
 # Thanks!
+___
 
 &amp;nbsp;
 
@@ -138,7 +166,7 @@ class: center
 
 - ***celular***    :     228 229 3419
 
-- ***slides***     :     https://fdzul.netlify.app/#1
+- ***slides***     :     https://fdzul.netlify.app/
 
 
 
