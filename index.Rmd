@@ -364,6 +364,18 @@ ___
 &nbsp;
 ### - matrices esparzas (matrices con muchos ceros). 
 
+
+---
+## PLS Dengue (Y)- WorlClim (X) & INEGI (X)
+___
+.pull-left[.blue[Dengue & WorldClim]
+![](figs/corrmat_bio_tmean.jpeg)]
+
+.pull-right[
+.blue[Dengue & INEGI]
+![](figs/corrmat_bio_tmin.jpeg)]
+
+
 ---
 # Thanks!
 ___
@@ -375,8 +387,6 @@ ___
 - ***celular***    :     228 229 3419
 
 - ***slides***     :     https://fdzul.netlify.app/
-
-
 
 
 
